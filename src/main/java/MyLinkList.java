@@ -57,6 +57,15 @@ public class MyLinkList {
         }
         return false;
     }
+    public void deleteNode(MyNode myNode) {
+        MyNode tempNode = head;
+        MyNode prevNode = null;
+        while(tempNode != null && tempNode.getKey() != myNode.getKey()) {
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        prevNode.setNext(tempNode.getNext());
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Node: ");
