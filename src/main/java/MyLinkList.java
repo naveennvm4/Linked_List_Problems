@@ -38,6 +38,15 @@ public class MyLinkList {
         this.head = head.getNext();
         return tempNode;
     }
+    public MyNode popLast() {
+        MyNode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = tempNode.getNext();
+        return tempNode;
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Node: ");
