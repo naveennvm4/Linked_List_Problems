@@ -28,6 +28,11 @@ public class MyLinkList {
             this.tail = myNode;
         }
     }
+    public void insert(MyNode myNode, MyNode newNode) {
+        MyNode tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Node: ");
