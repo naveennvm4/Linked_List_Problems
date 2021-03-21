@@ -33,6 +33,11 @@ public class MyLinkList {
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
+    public MyNode pop() {
+        MyNode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Node: ");
