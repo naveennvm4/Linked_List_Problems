@@ -18,6 +18,16 @@ public class MyLinkList {
             this.head.setNext(tempNode);
         }
     }
+    public void append(MyNode myNode) {
+        if (this.head == null)
+            this.head = myNode;
+        if (this.tail == null)
+            this.tail = myNode;
+        else {
+            this.tail.setNext(myNode);
+            this.tail = myNode;
+        }
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Node: ");
