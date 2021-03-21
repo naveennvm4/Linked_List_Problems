@@ -47,6 +47,16 @@ public class MyLinkList {
         tempNode = tempNode.getNext();
         return tempNode;
     }
+    public boolean searchNode(MyNode key) {
+        MyNode tempNode = head;
+        while(tempNode !=null && tempNode.getNext()!=null) {
+            if (tempNode.getKey()==key.getKey()) {
+                return true;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return false;
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Node: ");
