@@ -11,6 +11,10 @@ public class MyNode<K> {
         return next;
     }
 
+    public K getKey(){
+        return key;
+    }
+
     public void setNext(MyNode next) {
         this.next = next;
     }
