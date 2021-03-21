@@ -92,4 +92,25 @@ public class MyLinkListTest {
         myLinkedList.printMyNodes();
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenElementShouldInsertANodeAfterTheGivenSearchNode() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myNewNode = new MyNode<>(40);
+        MyLinkList myLinkedList = new MyLinkList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        boolean check = myLinkedList.searchNode(mySecondNode);
+        if (check)
+            myLinkedList.insert(mySecondNode, myNewNode);
+        myLinkedList.printMyNodes();
+        MyNode newPosition = myLinkedList.head.getNext();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                newPosition.getNext().equals(myNewNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);
+    }
 }
